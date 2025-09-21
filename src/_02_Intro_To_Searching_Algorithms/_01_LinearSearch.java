@@ -21,7 +21,7 @@ public class _01_LinearSearch {
            
         }
         
-//addjh
+
         return indexOfValue;
     }
 }
