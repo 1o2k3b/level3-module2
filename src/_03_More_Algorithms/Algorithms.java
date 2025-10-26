@@ -8,8 +8,7 @@ import java.util.List;
 public class Algorithms {
 
 	public static String multiply(int num1, int num2) {
-		return "" + num1 + " x " + num2 + " = " + (num1*num2);
-		
+		return "" + num1 + " x " + num2 + " = " + (num1 * num2);
 
 	}
 
@@ -74,12 +73,12 @@ public class Algorithms {
 		while (!sorted) {
 			sorted = true;
 			for (int i = 0; i < results.size() - 1; i++) {
-		
+
 				double current = results.get(i);
 				double next = results.get(i + 1);
 				if (results.get(i) > results.get(i + 1)) {
 					results.set(i, next);
-					results.set(i+1, current);
+					results.set(i + 1, current);
 					sorted = false;
 				}
 
@@ -108,12 +107,12 @@ public class Algorithms {
 		while (!sorted) {
 			sorted = true;
 			for (int i = 0; i < unsortedSequences.size() - 1; i++) {
-		
+
 				String current = unsortedSequences.get(i);
 				String next = unsortedSequences.get(i + 1);
 				if (unsortedSequences.get(i).length() > unsortedSequences.get(i + 1).length()) {
 					unsortedSequences.set(i, next);
-					unsortedSequences.set(i+1, current);
+					unsortedSequences.set(i + 1, current);
 					sorted = false;
 				}
 
@@ -129,12 +128,12 @@ public class Algorithms {
 		while (!sorted) {
 			sorted = true;
 			for (int i = 0; i < words.size() - 1; i++) {
-		
+
 				String current = words.get(i);
 				String next = words.get(i + 1);
-				if (current.charAt(0)>(next.charAt(0))) {
+				if (current.charAt(0) > (next.charAt(0))) {
 					words.set(i, next);
-					words.set(i+1, current);
+					words.set(i + 1, current);
 					sorted = false;
 				}
 
@@ -142,31 +141,43 @@ public class Algorithms {
 		}
 
 		return words;
-	
+
 	}
 
 	public static boolean isPrime(int i) {
 		// TODO Auto-generated method stub
 		boolean isPrime = true;
-		for(int checker = 2; checker<i; checker++) {
-			if(i%checker==0) {
+		for (int checker = 2; checker < i; checker++) {
+			if (i % checker == 0) {
 				isPrime = false;
 				return false;
-				
+
 			}
-		}  
+		}
 		return isPrime;
-		
+
 	}
 
 	public static boolean isSquare(int i) {
 		// TODO Auto-generated method stub
-		return false;
+		double placeholder = Math.pow(i + 0.0, 0.5);
+		if (placeholder % 1 == 0) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	public static boolean isCube(int i) {
 		// TODO Auto-generated method stub
-		return false;
+
+		if(	Math.cbrt(i)% 1 == 0) {
+			return true;
+		} else {
+			return false;
+		}
+		
 	}
 
 }
